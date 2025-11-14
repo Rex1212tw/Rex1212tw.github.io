@@ -1,0 +1,475 @@
+@property --progress-percentage {
+    syntax: '<number>';
+    initial-value: 0;
+    inherits: false;
+}
+
+.main-header {
+    background-color: #5a4937; 
+    color: #fff; 
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.main-header h1 {
+    font-size: 36px;
+    margin: 0 0 5px 0;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #d8c4a4;
+}
+
+.main-header p {
+    font-size: 18px;
+    margin: 0;
+    opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+    .main-header h1 {
+        font-size: 28px;
+    }
+    .main-header p {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", sans-serif;
+    background-color: #f9f7f3;
+    color: #4b3b2a;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: #bfa68f;
+    text-align: center;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #4b3b2a;
+}
+
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 25px 25px 25px;
+    margin-bottom: 30px;
+}
+
+.simple-title {
+    border-left: 6px solid #bfa68f;
+    padding-left: 12px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #6b4f3f;
+}
+
+#about-title {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.intro-headline {
+    font-size: 30px;
+    font-weight: 800;
+    color: #6b4f3f;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.intro-tagline {
+    font-size: 18px;
+    font-weight: 600;
+    color: #bfa68f;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    margin-top: 50px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 80%;
+    border: 4px solid #bfa68f;
+}
+
+.about-text {
+    font-family: "微軟正黑體";
+    flex: 1;
+    font-size: 18px;
+}
+
+.study-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+}
+
+.tag {
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tag-major {
+    background-color: #d8c4a4;
+    color: #4b3b2a;
+    border: 1px solid #bfa68f;
+}
+
+.tag-minor {
+    background-color: #6b4f3f;
+    color: #fff;
+}
+
+.slogan {
+    border-top: 3px solid #bfa68f;
+    margin-top: 20px;
+    padding-top: 15px;
+    text-align: center;
+    color: #6b4f3f;
+    font-style: italic;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*專業能力*/
+
+#skills ul {
+    display: none;
+}
+
+#skills li {
+    border-left: none;
+    padding-left: 0;
+}
+
+.skill-category-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4b3b2a;
+    border-bottom: 2px solid #e7e0d3;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#skills .skill-category-title:first-of-type {
+    margin-top: 0;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.skill-item {
+    flex-basis: 20%;
+    min-width: 100px;
+    box-sizing: border-box;
+}
+
+.skill-name {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4b3b2a;
+}
+
+/*圓形進度條樣式*/
+
+.progress-conic {
+    --b: 8px;
+    --c: #bfa68f;
+    --g: #e7e0d3;
+    --w: 120px;
+
+    width: var(--w);
+    height: var(--w);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(closest-side, #fff calc(100% - var(--b) * 2), transparent 0),
+        conic-gradient(var(--c) calc(var(--progress-percentage) * 1%), var(--g) 0);
+    
+    animation: progress 2s ease-out forwards;
+    --target-p: var(--p);
+    --p: 0;
+}
+
+.progress-conic::before {
+    content: none;
+}
+
+.progress-conic::after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.percent-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #6b4f3f;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes progress {
+    to {
+        --progress-percentage: var(--target-p);
+    }
+}
+
+
+/* 經驗 */
+
+.exp-item, .exp-item0 {
+    margin-bottom: 25px;
+    
+}
+  .exp-item img, .exp-item0 img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .exp-item img {
+    width: 100%;
+    max-width: 400px;
+  }
+  .exp-item0 img {
+    width: 100%;
+    max-width: 400px; 
+  }
+
+  #experience a{
+      color: #6b4f3f; 
+      text-decoration: none; 
+      font-weight: 700; 
+      display: block; 
+      margin-top: 5px; 
+  }
+  
+  #experience a:hover{
+      text-decoration: underline;
+  }
+
+
+  .timeline-container {
+    position: relative;
+    padding-left: 30px; 
+}
+
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px; 
+    padding-left: 30px; 
+}
+
+
+.timeline-dot {
+    position: absolute;
+    left: 40px; 
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #6b4f3f; 
+    border: 3px solid #f9f7f3; 
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #bfa68f; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    color: #bfa68f;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.timeline-content p, .timeline-content ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.timeline-content li {
+    padding-left: 0;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 600px) {
+    .timeline-container::before {
+        left: 25px; 
+    }
+    .timeline-dot {
+        left: 20px; 
+    }
+    .timeline-container {
+        padding-left: 15px;
+    }
+    .timeline-item {
+        padding-left: 25px;
+    }
+}
+  
+#contact a {
+    color: #6b4f3f;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+#contact ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#contact li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* 底部 */
+
+footer {
+    background-color: #bfa68f;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* 回頂端*/
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    /* 設置為 none，讓 JS 處理顯示/隱藏 */
+    display: none; 
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #bfa68f;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+    transition: opacity 0.3s, background-color 0.3s;
+    z-index: 1000;
+}
+
+#backToTopBtn:hover {
+    opacity: 1;
+    background-color: #6b4f3f;
+}
+
+
+@media (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        margin-top: 15px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .study-tags {
+        justify-content: center;
+    }
+
+    .skills-grid {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .skill-item {
+        min-width: 120px;
+        flex-shrink: 0;
+    }
+
+    .progress-conic {
+        --w: 100px;
+    }
+
+    .percent-text {
+        font-size: 20px;
+    }
+}
